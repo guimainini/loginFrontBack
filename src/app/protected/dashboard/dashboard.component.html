@@ -13,3 +13,15 @@
 <button (click)="logout()" >
     Logout
 </button>
+
+
+<!-- probando codigo QR -->
+<div class="container">
+    <h3>Redirigiendo a donde yo quiero</h3>
+    <ngx-qrcode 
+          [elementType]="elementType" 
+          [value] = "value"
+          cssClass = "aclass"
+          errorCorrectionLevel = "L">
+    </ngx-qrcode>
+</div>

@@ -15,6 +15,11 @@ import { AuthService } from '../../auth/services/auth.service';
 })
 export class DashboardComponent {
 
+  //codigo QR
+  elementType = 'url';
+  value = 'https://www.youtube.com/watch?v=j2KtoUeoizM&t=1329s';
+
+
   get usuario () {
     return this.AuthService.usuario;
   }

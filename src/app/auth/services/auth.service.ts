@@ -32,13 +32,11 @@ export class AuthService {
     return this.http.post<AuthResponse>(url, body)
       .pipe(
         tap( resp => {
-
-          localStorage.setItem('asd', resp.token!);
+          
           if( resp.ok ) {
-            this._usuario = {
-              name : resp.name!,
-              uid  : resp.uid!
-            }
+            
+            localStorage.setItem('asd', resp.token!);
+          
           }
           
         }),
@@ -61,12 +59,12 @@ export class AuthService {
       .pipe(
         tap( resp => {
 
-          localStorage.setItem('asd', resp.token!);
           if( resp.ok ) {
-            this._usuario = {
-              name : resp.name!,
-              uid  : resp.uid!
-            }
+            localStorage.setItem('asd', resp.token!);
+            // this._usuario = {
+            //   name : resp.name!,
+            //   uid  : resp.uid!
+            // }
           }
           
         }),
@@ -86,12 +84,13 @@ export class AuthService {
         map( resp => {
 
           localStorage.setItem('asd', resp.token!);
-          if( resp.ok ) {
+          
             this._usuario = {
               name : resp.name!,
-              uid  : resp.uid!
+              uid  : resp.uid!,
+              email: resp.email!
             }
-          }
+          
 
           return resp.ok
         }),
